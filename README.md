@@ -1,2 +1,2 @@
 # IntelliJCodes
-To see code directly go to src folder.
+To see code , go to first project java -> src -> com folder.
