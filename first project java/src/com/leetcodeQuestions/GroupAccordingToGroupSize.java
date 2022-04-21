@@ -20,13 +20,20 @@ public class GroupAccordingToGroupSize {
             else {
                 map.get(groupSizes[i]).add(i);
             }
+            //storing in the hashmap like
+            //{
+            //  1 -> [5]
+            //  3 -> [0,1,2,3,4,6]
+            // }
         }
-//        System.out.println(map);
+
         for(int key: map.keySet()){
             int i=0;
             ArrayList<Integer> res = map.get(key);
             while(i+key<=res.size()){
-                ansArr.add(res.subList(i,i+key));
+                ansArr.add(res.subList(i,i+key)); //traversing the loop key number of times and storing a sublist
+                                                  //in a new 2d list each of size key. found sublist on youtube
+                                                  // was becoming too complicated to do on my own
                 i+=key;
             }
         }
