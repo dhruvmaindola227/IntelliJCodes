@@ -1,9 +1,12 @@
 package com.leetcodeQuestions;
 
+import java.util.HashMap;
+
 public class CountOccurencesOfChars {
     public static void main(String[] args) {
         String s="aaaaabbbbbsssccc";
-        printAns(s);
+//        printAns(s);
+        ansWithHashmap(s);
     }
 
     public static void printAns(String s) {
@@ -20,5 +23,19 @@ public class CountOccurencesOfChars {
                 count=1;
             }
         }
+    }
+
+    public static void ansWithHashmap(String s){
+        char[] chars= s.toCharArray();
+        HashMap<Character,Integer> map = new HashMap<>();
+        for (int i = 0; i < chars.length; i++) {
+            if(!map.containsKey(chars[i])){
+                map.put(chars[i],1);
+            }
+            else {
+                map.put(chars[i],map.get(chars[i])+1);
+            }
+        }
+        map.forEach((key,value)-> System.out.println(key+" "+ value));
     }
 }
