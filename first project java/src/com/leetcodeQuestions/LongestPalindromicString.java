@@ -5,61 +5,49 @@ import java.util.LinkedList;
 //Find the longest palindromic substring - Leetcode.
 public class LongestPalindromicString {
     public static void main(String[] args) {
-        String s="racecarnnnnn";
+        String s = "racecarnnnnnnnnnnnnnnn";
         //fsdfdabbbbbbabbde
         //dfd //abbbbbba //bbabb //bab //bb //bbbbbb
         System.out.println(longestPalindrome(s));
-        }
+    }
 
 
-    static String longestPalindrome(String s){
-        ArrayList<Integer> lr=new ArrayList<>();
-        int start=0;
-        int end=s.length();
-        int max_length=1;
-        StringBuilder ans= new StringBuilder("");
-        while(start<end)
-        {   String str=s.substring(start,end);
-            if(s.charAt(start)!=s.charAt(end-1)) {
-                if(end==start+1)
-                {
-                    end=s.length()-1;
-                    start++;
+    static String longestPalindrome(String s) {
+        String result = "";
+        int maxLengthOfSubstring = 0;
+        for (int index = 0; index < s.length(); index++) {
+            //for the case where the palindrome substring is of odd length //racecar
+            //in odd length palindromic substring , one can expand from centre and both left and right pointers
+            //will be at a central index initially because mid of odd will always be available.
+            int left = index;
+            int right = index;
+            while ((left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right))) {
+                if (maxLengthOfSubstring < right-left+1) {
+                    result= s.substring(left,right+1);
+                    maxLengthOfSubstring = right-left+1;
                 }
-                else
-                end--;
+                left--;
+                right++;
             }
-            else {
-                    boolean res=checkPal(str);
-                if (res) {
-                    if (str.length() > max_length) {
-                        max_length = str.length();
-                        ans.setLength(0);
-                        ans.append(s.substring(start, end));
 
-                    } else {
-                        start++;
-                        end = s.length() - 1;
-                    }
-                } else
-                    end--;
+            //for the case where the palindrome substring is of even length
+            //in even length palindromic substring , there will be no centre so just need left and right to be
+            //next to each other and then repeat the expanding process.
+            left = index;
+            right = index + 1;
+            while ((left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right))) {
+                if (maxLengthOfSubstring < right-left+1) {
+                    result= s.substring(left,right+1);
+                    maxLengthOfSubstring = right-left+1;
+                }
+                left--;
+                right++;
             }
-        }
-        return ans.toString();
-    }
 
-    static boolean checkPal(String str){
-        int start=0;
-        int end=str.length()-1;
-        while(start<end)
-        {
-            if(str.charAt(start)==(str.charAt(end))) {
-                start++;
-                end--;
-            }
-            else return false;
+
         }
-        return true;
+        return result;
     }
-    }
+}
+
 
