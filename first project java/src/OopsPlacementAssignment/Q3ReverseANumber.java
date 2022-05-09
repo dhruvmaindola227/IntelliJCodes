@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Q3ReverseANumber {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number of elements you want in your fibonacci series.");
+        System.out.println("Enter the number whose reverse you want.");
         int number = sc.nextInt();
         int reverse = 0;
         while(number != 0)

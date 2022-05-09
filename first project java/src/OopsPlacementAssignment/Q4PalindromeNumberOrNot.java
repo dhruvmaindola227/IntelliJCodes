@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Q4PalindromeNumberOrNot {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number of elements you want in your fibonacci series.");
+        System.out.println("Enter the number you want to check if it is a palindrome or not.");
         int number = sc.nextInt();
         int temp = number; //doing this because we are modifying the original number in the code and we need to compare original give number
                             //with its reverse at the end of the code.
