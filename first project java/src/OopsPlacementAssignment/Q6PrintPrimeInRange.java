@@ -1,7 +1,4 @@
 package OopsPlacementAssignment;
-
-import com.sun.security.jgss.GSSUtil;
-
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -16,10 +13,8 @@ public class Q6PrintPrimeInRange {
     }
 
     public static void printPrimeInRangeOptimal(int range1, int range2) {
-
         boolean[] isPrime = new boolean[range2+1];
         helper(range1 , range2 , isPrime);
-
     }
 
     public static void helper(int range1, int range2, boolean[] isPrime) {
