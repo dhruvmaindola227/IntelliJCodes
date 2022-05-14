@@ -1,11 +1,11 @@
 package com.linkedLists;
 
-public class LinkedList {
+public class SinglyLinkedList {
     int size;
     Node head;
     Node tail;
     Node temp;
-    LinkedList(){
+    SinglyLinkedList(){
         this.size = 0;
     }
 
