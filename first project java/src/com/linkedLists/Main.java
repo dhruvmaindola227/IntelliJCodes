@@ -11,7 +11,9 @@ public class Main {
         list.insert(100 , 2);
         list.insert(1000 , 6);
         list.display();
-        list.deleteValue(10);
+        System.out.println(list.size);
+        list.deleteValue(1000);
         list.display();
+        System.out.println(list.size);
     }
 }

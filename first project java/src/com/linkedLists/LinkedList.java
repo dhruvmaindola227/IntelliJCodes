@@ -22,6 +22,7 @@ public class LinkedList {
     Node node = new Node(value);
     temp.next = node;
     tail = node;
+    size++;
     }
 
     void insert(int value , int index){
@@ -32,7 +33,7 @@ public class LinkedList {
         Node node = new Node(value);
         node.next = tempo.next;
         tempo.next = node;
-
+        size++;
     }
 
     void deleteValue(int value){
@@ -41,8 +42,8 @@ public class LinkedList {
         }
         Node tempo = head;
         Node prev = null;
-        for (int i = 1; i < size; i++) {
-            if(i == 1 && tempo.value == value ){
+        while(tempo != null){
+            if(head.value == value){
                 prev = tempo;
                 tempo = tempo.next;
                 head = tempo;
@@ -50,23 +51,21 @@ public class LinkedList {
                 size--;
                 return;
             }
-            else if(tempo.value == value){
+            if(tempo.value == value){
                 prev.next = tempo.next;
                 tempo.next = null;
                 size--;
+                return;
             }
-            prev = tempo;
-            tempo = tempo.next;
+            else{
+                prev = tempo;
+                tempo = tempo.next;
+            }
+
+
         }
 
     }
-
-
-    void deleteAt(int index){
-
-
-    }
-
 
 
     void display(){
