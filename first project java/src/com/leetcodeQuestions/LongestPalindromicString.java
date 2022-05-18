@@ -5,7 +5,7 @@ import java.util.LinkedList;
 //Find the longest palindromic substring - Leetcode.
 public class LongestPalindromicString {
     public static void main(String[] args) {
-        String s = "racecarnnnnnnnnnnnnnnn";
+        String s = "racecadfsdfsdfsdfdsfdnnnnnn";
         //fsdfdabbbbbbabbde
         //dfd //abbbbbba //bbabb //bab //bb //bbbbbb
         System.out.println(longestPalindrome(s));

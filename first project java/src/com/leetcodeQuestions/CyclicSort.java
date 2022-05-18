@@ -4,28 +4,28 @@ import java.util.Arrays;
 
 public class CyclicSort {
     public static void main(String[] args) {
-        int[] arr={2,5,3,4,1,0};
-        System.out.println(Arrays.toString(cycle(arr)));
-        Integer i=Integer.valueOf(25);
+        int[] arr = {1,2,4,3,5};
+        sort(arr);
+        System.out.println(Arrays.toString(arr));
     }
 
-    static int[] cycle(int[]nums)
-    {
-        int temp=0;
-        int i=0;
-        while(i<nums.length)
-        {
-            int correct=nums[i];
-            if(correct<nums.length && i!=nums[i])
-            {
-                temp=nums[i];
-                nums[i]=nums[correct];
-                nums[correct]=temp;
-            }
-            else{
+    static void sort(int[] arr) {
+        int i = 0;
+        while (i < arr.length) {
+            int correct = arr[i] - 1;
+            if (arr[i] != arr[correct]) {
+                swap(arr, i , correct);
+            } else {
                 i++;
             }
-        } return nums;
-
+        }
     }
+
+    static void swap(int[] arr, int first, int second) {
+        int temp = arr[first];
+        arr[first] = arr[second];
+        arr[second] = temp;
+    }
+
+
 }

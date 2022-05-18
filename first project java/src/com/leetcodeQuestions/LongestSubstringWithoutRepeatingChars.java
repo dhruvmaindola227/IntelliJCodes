@@ -1,9 +1,14 @@
 package com.leetcodeQuestions;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class LongestSubstringWithoutRepeatingChars {
     public static void main(String[] args) {
-        System.out.println(answer("abcabcaa"));
+//        System.out.println(answer("abcabcaa"));
+        System.out.println(lengthOfLongestSubstring("abcabcdefabc"));
     }
+
     public static int answer(String s) {
         int start = 0;
         int end = 0;
@@ -28,4 +33,21 @@ public class LongestSubstringWithoutRepeatingChars {
         }
         return max_length;
         }
+
+    public static int lengthOfLongestSubstring(String s){
+        int current = 0;
+        int prev = 0;
+        int maxLen = -1;
+        Set<Character> set = new HashSet<>();
+        while(current < s.length()){
+            if(!set.contains(s.charAt(current))){
+                set.add(s.charAt(current++));
+                maxLen = Math.max(maxLen, set.size());
+            }else{
+                set.remove(s.charAt(prev++));
+            }
+        }
+        return maxLen;
     }
+    }
+

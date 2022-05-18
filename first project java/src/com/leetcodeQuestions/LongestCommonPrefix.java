@@ -2,12 +2,12 @@ package com.leetcodeQuestions;
 
 public class LongestCommonPrefix {
     public static void main(String[] args) {
-        String[] strs = {"flower" , "flow" , "flowing"};
+        String[] strs = {"abc" , "abcde" , "abceee" , "ab"};
         System.out.println(longestCommonPrefix(strs));
+
     }
 
-
-        public static String longestCommonPrefix(String[] strs){
+    public static String longestCommonPrefix(String[] strs){
             int minLen = Integer.MAX_VALUE;
             int indexOfMinLen = -1;
             StringBuilder answer = new StringBuilder();
@@ -18,14 +18,16 @@ public class LongestCommonPrefix {
                 }
             }
             for(int i = 0 ; i < strs[indexOfMinLen].length() ; i++){
-                //then traversing it char by char and comparing																				//char in the string elements in the array strs[ ].
+                //then traversing it char by char and comparing
+                // char in the string elements in the array strs[ ].
                 for(int j = 0 ; j < strs.length ; j++){
                     if(strs[indexOfMinLen].charAt(i) != strs[j].charAt(i)){
                         //if we find a character is not matching , just return.
                         return answer.toString();
                     }
                 }
-                answer.append(strs[indexOfMinLen].charAt(i)); //if that loop ends that means in all the elements we were
+                answer.append(strs[indexOfMinLen].charAt(i));
+                //if that loop ends that means in all the elements we were
                 //able to find the matching character. So just append it.
             }
             return answer.toString();
