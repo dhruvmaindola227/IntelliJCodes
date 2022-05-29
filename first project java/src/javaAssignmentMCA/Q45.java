@@ -1,5 +1,6 @@
 package javaAssignmentMCA;
 
+import java.sql.Array;
 import java.util.Scanner;
 
 //Write a java program to find all permutations of a string.
@@ -23,6 +24,9 @@ public class Q45 {
         Scanner scan = new Scanner(System.in);
         String s;
         String answer = "";
+
+//        String s1 = "c";
+//        System.out.println(s1.substring(0));
         System.out.print("Enter the string : ");
         s = scan.next();
         System.out.print("All possible strings are : ");

@@ -7,7 +7,7 @@ import java.util.Scanner;
  * if i say find the factorial of 6. it is 6x5x4x3x2x1 right? And now if i say find factorial of 5. It is 5x4x3x2x1.
  * Notice how 6 factorial has all of the elements of 5 factorial and the only difference is that 6 is being multiplied to
  * whatever the value of 5 factorial is. This is the same for every number. Even for 1. (0! = 1).**/
-public class Q2FactorialWithRecursion {
+public class Q1FactorialWithRecursion {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number you want factorial of -->>");

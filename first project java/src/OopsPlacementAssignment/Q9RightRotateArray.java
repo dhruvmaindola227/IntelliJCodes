@@ -4,13 +4,13 @@ import java.util.Arrays;
 
 public class Q9RightRotateArray {
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5,6};
+        int[] arr = {1,2,3,4,5,6,7,8,9,10};
         System.out.println("original array : " + Arrays.toString(arr));
         int numberOfTimesToRotate = 3;
 //        rotate(arr , numberOfTimesToRotate);
-          rotateMyWay(arr,numberOfTimesToRotate);
+//          rotateMyWay(arr,numberOfTimesToRotate);
         System.out.println("Array after rotating "+numberOfTimesToRotate+" times : " +
-                Arrays.toString(arr));
+                Arrays.toString(rotateNormal(arr,3)));
 
     }
 

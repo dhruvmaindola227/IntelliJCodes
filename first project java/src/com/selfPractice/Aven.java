@@ -1,11 +1,24 @@
 package com.selfPractice;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
+class Base{
+    void show(){
+        System.out.println("Base Show");
+    }
+}
 
-abstract class Aven {
+class Derived extends Base{
+    void show(){
+        System.out.println("Dervied show");
+    }
+}
+ class Aven {
     public static void main(String[] args) {
-    byte b=127;
-    //byte c=128; //not possible. value range is -128 to 127
+         Base b = new Derived();
+        b.show();
+
     }
     }
 

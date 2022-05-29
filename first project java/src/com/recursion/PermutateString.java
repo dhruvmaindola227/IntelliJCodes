@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class PermutateString {
     public static void main(String[] args) {
-        System.out.println("Ans is "+ SubSequence1("","abc"));
+        System.out.println("Ans is "+ SubSequence1("","123"));
         SubSequence("","abc");
     }
 

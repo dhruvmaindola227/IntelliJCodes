@@ -1,3 +1,5 @@
+package com.linkedLists;
+
 public class LL {
 
     private Node head;
@@ -54,7 +56,9 @@ public class LL {
     // insert using recursion
     public void insertRec(int val, int index) {
         head = insertRec(val, index, head);
+//        helper(val , index , head , 1);
     }
+
     private Node insertRec(int val, int index, Node node) {
         if (index == 0) {
             Node temp = new Node(val, node);
@@ -65,7 +69,17 @@ public class LL {
         node.next = insertRec(val, index-1, node.next);
         return node;
     }
-
+    //MY LOGIC FOR INSERTING USING RECURSION
+    public void helper(int value , int position , Node temp , int index) {
+        if(index == position - 1){
+            Node newNode = new Node(value);
+            newNode.next = temp.next;
+            temp.next = newNode;
+            size++;
+            return;
+        }
+        helper(value , position ,  temp.next , ++index);
+    }
 
     public int deleteLast() {
         if (size <= 1) {
@@ -233,7 +247,7 @@ public class LL {
     }
 
     // recursion reverse
-    private void reverse(Node node) {
+    public void reverse(Node node) {
         if (node == tail) {
             head = tail;
             return;

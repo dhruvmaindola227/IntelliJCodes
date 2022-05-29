@@ -1,12 +1,12 @@
 package com.selfPractice;
 
 
+import java.util.ArrayList;
+
 public class Hello{
     public static void main(String[] args) {
-        double x = 3.14;
-
-        int y = (int) Math.ceil(x);
-
-        System.out.print(y);
+        java.util.ArrayList<Integer> list = new ArrayList<>();
+        list.add(10);
+        System.out.println(list);
     }
 }

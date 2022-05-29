@@ -1,12 +1,16 @@
 package com.leetcodeQuestions;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
 public class LongestSubstringWithoutRepeatingChars {
     public static void main(String[] args) {
 //        System.out.println(answer("abcabcaa"));
-        System.out.println(lengthOfLongestSubstring("abcabcdefabc"));
+        System.out.println(lengthOfLongestSubstring("bacadefabc"));
+        int[] arr={1,2};
+
+
     }
 
     public static int answer(String s) {

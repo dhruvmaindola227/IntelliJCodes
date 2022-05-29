@@ -5,10 +5,6 @@ public class Test implements Interface,Interface2 {
     public void m1() {
         System.out.println("m1");
     }
-    @Override
-    public void m2() {
-        System.out.println("m2");
-    }
 
     @Override
     public void m3() {
@@ -23,17 +19,12 @@ public class Test implements Interface,Interface2 {
     @Override
     public void m5() {
         Interface2.super.m5();
-
     }
 
     public static void main(String[] args) {
-        Test t= new Test();
-        t.m1();
-        t.m2();
-        t.m3();
-        t.m4();
-        t.m5();
         Interface2.m6(); //because the m6() is a static method inside the Interface2.
+        Interface inte = () -> System.out.println("m1 is called");
+        inte.m1();
 
     }
 }
