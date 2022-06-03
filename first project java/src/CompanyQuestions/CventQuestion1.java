@@ -9,7 +9,7 @@ public class CventQuestion1 {
     public static void main(String[] args) {
         int[] numbers = {1234 , 1243 , 6542 , 6742, 2342 , 2345};
         String[] names = {"souvik" , "samarth" , "dhruv" , "rohan" , "aayush" , "ronaldo"};
-        int numberToFind = 980;
+        int numberToFind = 34;
         List<String> list = new ArrayList<>();
         for (int i = 0; i < numbers.length; i++) {
             if(String.valueOf(numbers[i]).contains(String.valueOf(numberToFind))){
@@ -23,8 +23,6 @@ public class CventQuestion1 {
             for(String name : list){
                 System.out.print(name + "  ");
             }
-
         }
-
     }
 }
