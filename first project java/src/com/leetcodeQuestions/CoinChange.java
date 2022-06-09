@@ -1,31 +1,24 @@
 package com.leetcodeQuestions;
 
 import java.util.Arrays;
-
+//understood from neetcode.
+//bottom up approach.
 public class CoinChange {
     public static void main(String[] args) {
-        int arr[]= {186,419,83,408};
-        int amount = 6249;
+        int[] arr = {6,4};
+        int amount = 20;
         System.out.println(coinChange(arr,amount));
     }
     public static int coinChange(int[] coins, int amount) {
-        Arrays.sort(coins);
-        int coinsCount=0;
-        int end = coins.length-1;
-        int divident = 0;
-        int remainder = 0;
-        while(end >-1){
-            divident = amount / coins[end];
-            coinsCount+=divident;
-            remainder = amount % coins[end];
-            if(remainder!=0){
-                amount = remainder;
-                end--;
-            }else if(remainder==0){
-                return coinsCount;
+                int[] dp = new int[amount + 1];
+                Arrays.fill(dp , 1 , dp.length , amount + 1); //initializing array with max value ie. amount+1.
+                for (int i=1; i < dp.length; i++) { //calculating no.of.coins for all amounts till the actual amount.
+                    for (int coin : coins) {
+                        if (i >= coin) {
+                            dp[i] = Math.min(dp[i], dp[i - coin] + 1); //finding the minimum number of coins to make up the amount.
+                        }
+                    }
+                }
+                return dp[amount] == dp.length ? -1 : dp[amount]; //if the dp[amount] is still the max value then it wasnt calculated.
             }
-        }//end of while loop
-
-        return -1; //returning -1 if no combination found.
-    }
 }
