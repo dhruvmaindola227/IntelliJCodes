@@ -46,7 +46,6 @@ public class Stack {
             }
             i++;
         }
-        System.out.println(Arrays.toString(stack));
         return (int)pop();
     }
 
@@ -134,7 +133,7 @@ public class Stack {
     public static void main(String[] args) {
        String s ="A+B*C/(E-F)";
        Stack s1 = new Stack();
-//        System.out.println(s1.infixToPostFix(s));
+        System.out.println(s1.infixToPostFix(s));
         System.out.println(s1.evaluatePostfix("22*34*+")); //10+
     }
 }

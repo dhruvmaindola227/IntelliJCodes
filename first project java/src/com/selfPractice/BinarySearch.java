@@ -6,8 +6,9 @@ public class BinarySearch {
     public static void main(String[] args) {
         int[] arr={7,6,5,4,3,2,1};
         //[1,2,3,4,5,6,7]
-        int target=3;
-        System.out.println(searchTarget(arr,target));
+        int target=4;
+        System.out.println(target/6);
+//        System.out.println(searchTarget(arr,target));
     }
 
     static int searchTarget(int[] arr,int target)

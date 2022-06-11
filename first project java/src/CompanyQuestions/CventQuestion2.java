@@ -34,7 +34,7 @@ public class CventQuestion2 {
         }
 //        return counter;
 //        System.out.println(map);
-        System.out.println(list);
+
         return list.get(1).size();
     }
 }
