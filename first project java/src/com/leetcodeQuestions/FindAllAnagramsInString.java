@@ -1,55 +1,50 @@
 package com.leetcodeQuestions;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class FindAllAnagramsInString {
     public static void main(String[] args) {
-    String s="abcbabcababucahkufnakucna";
-    String p="ab";
-    ArrayList<Integer> list = new ArrayList<Integer>(findAnagrams(s,p));
+        String s = "aa";
+        String p = "bb";
+        ArrayList<Integer> list = new ArrayList<>(findAnagrams(s, p));
         System.out.println(list);
+//        Map<Character , Integer> pCount = new HashMap<>();
+//        Map<Character , Integer> sCount = new HashMap<>();
+//        pCount.put('a' , 2);
+//        sCount.put('b' , 2);
+//        System.out.println(pCount.equals(sCount));
     }
 
-    public static List<Integer> findAnagrams(String s,String p){
-        char[] ch2=p.toCharArray();
-        Arrays.sort(ch2);
-        p=String.valueOf(ch2);
-        int start=0; //cbaebabacd
-        int end=start+p.length()-1;
-        ArrayList<Integer> list= new ArrayList<Integer>();
-        if(s.equals(p))
-        {
-            for(int i=0;i<s.length();i++)
-            {
-                list.add(i);
+
+    public static List<Integer> findAnagrams(String s, String p) {
+        ArrayList<Integer> answer = new ArrayList<>();
+        if(s.length() < p.length()){ //base condition.
+            return new ArrayList<>();
+        }
+
+        Map<Character , Integer> pCount = new HashMap<>();
+        Map<Character , Integer> sCount = new HashMap<>();
+        for (int i = 0; i < p.length(); i++) {
+            pCount.put(p.charAt(i) , pCount.getOrDefault(p.charAt(i) , 0) + 1);
+            sCount.put(s.charAt(i) , sCount.getOrDefault(s.charAt(i) , 0) + 1);
+        }
+        if(sCount.equals(pCount)) {
+            answer.add(0);
+        }
+        int left = 0;
+        for (int right = p.length() ; right < s.length() ; right++){
+            sCount.put(s.charAt(right) , sCount.getOrDefault(s.charAt(right) , 0) + 1);
+            sCount.put(s.charAt(left) , sCount.getOrDefault(s.charAt(left) , 0) - 1);
+
+            if(sCount.get(s.charAt(left)) == 0){
+                sCount.remove(s.charAt(left));
+            }
+            left++;
+            if(sCount.equals(pCount)){
+                answer.add(left);
             }
         }
-        if(p.length()>s.length())
-            return list;
-        for(start=0;start<s.length()-p.length()+1;start++)
-        {
-            if(p.contains(Character.toString(s.charAt(start)))){
-                if(doesContain(s.substring(start,end+1),p))
-                {   list.add(start);
-                }
-                end+=1;
-            }
-            else end++;
-        }
 
-        return list;
+        return answer;
     }
-
-    public static boolean doesContain(String substr, String p)
-    {
-        char[] ch1=substr.toCharArray();
-        Arrays.sort(ch1);
-        substr=String.valueOf(ch1);
-        if(substr.equals(p))
-        {return true;
-        }
-        return false;
-    }
- }
+}
