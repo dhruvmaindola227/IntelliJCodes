@@ -5,7 +5,7 @@ import java.util.*;
 public class GroupAnagramsTogether {
     public static void main(String[] args) {
         String[] strings ={"tea","aet","bgc","cbg","tae"};
-        System.out.println(groupAnagramsTogether(strings));
+//        System.out.println(groupAnagramsTogether(strings));
         System.out.println(groupAnagramsTogether2(strings));
     }
 
@@ -30,10 +30,11 @@ public class GroupAnagramsTogether {
     public static List<List<String>> groupAnagramsTogether2(String[] arr){
         Map<ArrayList<Integer>,ArrayList<String>> map= new HashMap<>();
         for(String string : arr){
-            if(!map.containsKey(charCountList(string))){
-                map.put(charCountList(string) , new ArrayList<>());
+            ArrayList<Integer> strInMap = new ArrayList<>(charCountList(string));
+            if(!map.containsKey(strInMap)){
+                map.put(strInMap , new ArrayList<>());
             }
-            map.get(charCountList(string)).add(string);
+            map.get(strInMap).add(string);
         }
         return new ArrayList<>(map.values());
         
