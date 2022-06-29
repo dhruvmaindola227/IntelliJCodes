@@ -21,13 +21,14 @@ public class GenerateParenthesis {
             answer.add(current.toString()); //toString() because current is a string builder.
             return ;
         }
-
+        //less than because we are running from 0,1,2....
         if(open < maxBrackets){
             current.append("(");
             backtrack(answer , current , open + 1 , close , maxBrackets);
             current.deleteCharAt(current.length() - 1); //delete the last character when recursive call is coming back.
         }
-
+        //close as many as we have opened.
+        //less than because we are running from 0,1,2....
         if(close < open){
             current.append(")");
             backtrack(answer , current , open , ++close , maxBrackets);
