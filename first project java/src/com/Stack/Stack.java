@@ -131,9 +131,9 @@ public class Stack {
     }
 
     public static void main(String[] args) {
-       String s ="A+B*C/(E-F)";
+       String s ="a+b*(c^d-e)^(f+g*h)-i";
        Stack s1 = new Stack();
         System.out.println(s1.infixToPostFix(s));
-        System.out.println(s1.evaluatePostfix("22*34*+"));
+//        System.out.println(s1.evaluatePostfix("22*34*+"));
     }
 }
