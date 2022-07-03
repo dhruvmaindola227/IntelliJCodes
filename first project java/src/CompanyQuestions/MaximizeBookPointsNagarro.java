@@ -1,6 +1,6 @@
-package com.DynamicProgramming;
+package CompanyQuestions;
 
-public class MaximizeBookPoints {
+public class MaximizeBookPointsNagarro {
     public static void main(String[] args) {
         System.out.println(maximizePoints(3, 7, new int[]{2, 6, 9}, new int[]{3, 5, 3}));
 
