@@ -1,4 +1,4 @@
-package com.DynamicProgramming;
+package CompanyQuestions;
 
 public class CardFlipSum {
     public static void main(String[] args) {
