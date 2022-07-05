@@ -27,31 +27,5 @@ public class WordBreak {
     }
 }
 
-//    public static boolean wordBreak(String s, List<String> wordDict) {
-//        int end=0;
-//        StringBuilder tempWord=new StringBuilder();
-//        //adding the elements of the list to a hashset for the betterment of time complexity.
-//        HashMap<String,Integer> map = new HashMap<>();
-//        for(int i=0;i<wordDict.size();i++){
-//            map.put(wordDict.get(i),i);
-//        }
-//        //aaaaaaa   //aaaa aaa
-//        while(end<s.length()){
-//            tempWord.append(s.charAt(end));
-//            if(end==s.length()-1) {
-//                if (map.containsKey(tempWord.toString()))
-//                    return true;
-//                else end++;
-//            }
-//            else {
-//                if(map.containsKey(tempWord.toString())) {
-//                    tempWord.setLength(0);
-//                    end++;
-//                } else {
-//                    end++;
-//                }
-//            }
-//            }
-//        return false;
-//    }
+
 

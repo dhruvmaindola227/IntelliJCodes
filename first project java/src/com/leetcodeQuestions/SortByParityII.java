@@ -1,4 +1,4 @@
-package RandomTesting;
+package com.leetcodeQuestions;
 
 import java.util.Arrays;
 
