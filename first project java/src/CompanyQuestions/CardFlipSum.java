@@ -3,7 +3,7 @@ package CompanyQuestions;
 public class CardFlipSum {
     public static void main(String[] args) {
         int size = 5;
-        int[] cards = {-100,2,3,4,-5};
+        int[] cards = {-2,3,-1,-4,-2};
         int sum = 0;
         for (int card : cards) {
             sum += card;
@@ -12,7 +12,6 @@ public class CardFlipSum {
         System.out.println((maxSumPossible(size , cards) * -2) + sum);
 
     }
-
     public static int maxSumPossible(int size, int[] cards) {
         //kadanes algorithm to find minimum sum subarray.
         int min_sum = Integer.MAX_VALUE;
@@ -26,6 +25,4 @@ public class CardFlipSum {
         }
         return min_sum;
     }
-
-
 }
