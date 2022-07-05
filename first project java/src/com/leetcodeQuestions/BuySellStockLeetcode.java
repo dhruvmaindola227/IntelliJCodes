@@ -5,30 +5,17 @@ import java.util.Arrays;
 public class BuySellStockLeetcode {
     public static void main(String[] args) {
         int[] arr={7,8,2,6};
-        System.out.println(answer(arr));
+        System.out.println(maxProfit(arr));
     }
 
-    static int answer(int[] prices){
-        int max=Integer.MIN_VALUE;
-        int ans=0;
-        int min=Integer.MAX_VALUE;
-        for(int i=0;i<prices.length;i++)
-        {
-            if(prices[i]>max)
-                max=prices[i];
-        }
-        for(int i=0;i<prices.length;i++)
-        {
-            prices[i]=max-prices[i];
-        }
+    public static int maxProfit(int[] prices) {
+        int buyPrice = Integer.MAX_VALUE;
+        int sellPrice = 0;
 
-        for(int i=0;i<prices.length;i++)
-        {
-            if(prices[i]>max)
-                max=prices[i];
-            if(prices[i]!=0 && prices[i]<min)
-                min=prices[i];
+        for(int i = 0 ; i < prices.length ; i++){
+            buyPrice = Math.min(buyPrice , prices[i]); //find min possible buyPrice
+            sellPrice = Math.max(sellPrice , prices[i] - buyPrice); //calculate max possible sellPrice
         }
-        return max-min;
+        return sellPrice;
     }
 }
