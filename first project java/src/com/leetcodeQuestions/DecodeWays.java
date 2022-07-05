@@ -6,7 +6,7 @@ import java.util.Map;
 public class DecodeWays {
     public static void main(String[] args) {
         String numbers = "11111111111111";
-        System.out.println(numbers.length());
+
         System.out.println(numDecodings(numbers));
     }
     public static int numDecodings(String s) {
@@ -32,10 +32,10 @@ public class DecodeWays {
         if(Integer.parseInt(s.substring(0,2)) <= 26){
             int first = dfs(s.substring(1) , map);
             map.put(s.substring(1) , first);
-            System.out.println("after first call " + map);
+
             int second = dfs(s.substring(2) , map);
             map.put(s.substring(2) , second);
-            System.out.println("after second call " + map);
+
             return first + second;
         }
         else{
