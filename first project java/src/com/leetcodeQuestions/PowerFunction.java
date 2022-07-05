@@ -7,7 +7,7 @@ public class PowerFunction {
     }
 
         public static double iterativeMyPow(double base , int power){
-            double res = 1d;
+            double res = 1;
             if (power == 0) {
                 return 1;
             }
