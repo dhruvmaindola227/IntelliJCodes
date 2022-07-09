@@ -2,7 +2,7 @@ package CompanyQuestions;
 
 public class MaximizeBookPointsNagarro {
     public static void main(String[] args) {
-        System.out.println(maximizePoints(3, 7, new int[]{2, 6, 9}, new int[]{3, 5, 3}));
+        System.out.println(maximizePoints(3, 6, new int[]{2, 4 , 6}, new int[]{1 , 3, 4}));
 
     }
 

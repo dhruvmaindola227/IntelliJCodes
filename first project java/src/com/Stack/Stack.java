@@ -51,9 +51,9 @@ public class Stack {
 
     private int performOperation(char operator) {
         int operand1 = Integer.parseInt(String.valueOf(pop()));
-//        System.out.println("op1 -> "+ operand1);
+        System.out.println("op1 -> "+ operand1);
         int operand2 = Integer.parseInt(String.valueOf(pop()));
-//        System.out.println("op2 -> "+ operand2);
+        System.out.println("op2 -> "+ operand2);
         int ans = 0;
 
         switch (operator) {
@@ -133,7 +133,7 @@ public class Stack {
     public static void main(String[] args) {
        String s ="a+b*(c^d-e)^(f+g*h)-i";
        Stack s1 = new Stack();
-        System.out.println(s1.infixToPostFix(s));
-//        System.out.println(s1.evaluatePostfix("22*34*+"));
+//        System.out.println(s1.infixToPostFix(s));
+        System.out.println(s1.evaluatePostfix("21+3*"));
     }
 }

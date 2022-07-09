@@ -12,7 +12,7 @@ public class Knapsack01RecursivePlusMemoized {
     }
 
     public static int maximizePoints(int[][] dp , int size , int maxDuration , int[] points , int[] bookDuration){
-       if(maxDuration == 0 || size == 0){ //base condtion -> smallest valid input.
+       if(maxDuration == 0 || size == 0){ //base condition -> smallest valid input.
            return 0;
        }
        if(dp[size][maxDuration] != -1){
