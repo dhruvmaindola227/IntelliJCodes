@@ -2,9 +2,7 @@ package com.abstractClassesAndInterfaces;
 
 public class Test extends AbstractClasses1 implements Interface,Interface2 {
     @Override
-    public void m1() {
-        System.out.println("m1");
-    }
+    public void m1(){}
 
     @Override
     void m2() {

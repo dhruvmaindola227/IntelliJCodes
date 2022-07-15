@@ -8,9 +8,17 @@ public class ExceptionHandling8 { //1  //We have delegated the responsibility to
                                              //then here the CE will be there.
     {
         doMoreStuff();
+
     }
     public static void doMoreStuff()  //2   //but not throwing it till the main method.
     {
-//        Thread.sleep(1000);
+        throw new ArithmeticException();
     }
+}
+
+class NewClass{
+   static void hello(){
+       System.out.println("hello");
+    }
+
 }

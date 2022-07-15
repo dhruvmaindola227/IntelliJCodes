@@ -156,7 +156,7 @@ public class LL {
             this.value = value;
         }
 
-        public Node(int value, Node next) {
+        public Node(int value, Node ext) {
             this.value = value;
             this.next = next;
         }
