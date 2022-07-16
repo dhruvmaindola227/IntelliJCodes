@@ -1,6 +1,7 @@
 package com.LambdaExpressions;
 
 import java.util.*;
+import java.util.function.Predicate;
 
 public class ComparatorWithLambdas {
     public static void main(String[] args) {
@@ -41,29 +42,31 @@ public class ComparatorWithLambdas {
         System.out.println();
 
         //printing the names of Students whose names are starting with R using a multipurpose function
-        filterOnBasisOf(students,(student -> student.getName().charAt(0) == 'R'));
-        filterOnBasisOf(students , student -> student.getName().charAt(student.getName().length() - 1) == 'g');
+        filterOnBasisOf(students,(student -> student.getName().startsWith("R")));
+        filterOnBasisOf(students , student -> student.getName().endsWith("g"));
 
 
-        //same as above two but using the AICs.
-        filterOnBasisOf(students, new Condition() {
-            @Override
-            public boolean test(Student student) {
-                return student.getName().charAt(0) == 'R';
-            }
-        });
+//        //same as above two but using the AICs.
+//        filterOnBasisOf(students, new Condition() {
+//            @Override
+//            public boolean test(Student student) {
+//                return student.getName().charAt(0) == 'R';
+//            }
+//        });
+
+
+        //we can use the inbuilt Interface(Predicate) in java.util.Functions (made for common applications of lambdas)
+
     }
 
-    public static void filterOnBasisOf(List<Student> students , Condition condition){
+    public static void filterOnBasisOf(List<Student> students , Predicate<Student> predicate){
         for(Student st : students) {
-            if(condition.test(st)){
+            if(predicate.test(st)){
                 System.out.println("Student name filtered using the filterOnBasis() method -> " +  st);
             }
         }
     }
 }
-
-
 
 interface Condition{
     boolean test(Student student);
