@@ -46,13 +46,45 @@ public class BinaryTree {
         if(rootNode == null){
             return 0;
         }
-        sum +=  sumOfAllNodesInBinaryTree(rootNode.left , 0)
+        return sumOfAllNodesInBinaryTree(rootNode.left , 0)
                 +
                 sumOfAllNodesInBinaryTree(rootNode.right , 0)
                 +
                 rootNode.value;
+    }
 
-        return sum;
+    public static int numberOfNodes(Node rootNode){
+        if(rootNode == null){
+            return 0;
+        }
+        return 1 + numberOfNodes(rootNode.left) + numberOfNodes(rootNode.right);
+    }
+
+    public static int numberOfLeafNodes(Node rootNode){
+        if(rootNode.left != null && rootNode.right != null){
+            return numberOfLeafNodes(rootNode.left) + numberOfLeafNodes(rootNode.right);
+        }
+
+        return 1;
+    }
+
+    public static int getHeightOfBinaryTree(Node rootNode){
+        if(rootNode == null){
+            return -1;
+        }
+        return 1 + Math.max(getHeightOfBinaryTree(rootNode.left), getHeightOfBinaryTree(rootNode.right));
+    }
+
+    public static void printGivenLevel(Node rootNode , int level){
+        if(rootNode == null){
+            return;
+        }
+        if(level == 1){
+            System.out.print(" "+ rootNode.value + " ");
+            return;
+        }
+        printGivenLevel(rootNode.left , level - 1);
+        printGivenLevel(rootNode.right , level - 1);
     }
 
     public static void main(String[] args) {
@@ -78,6 +110,14 @@ public class BinaryTree {
         System.out.println();
         System.out.println("sum of all nodes in tree is -> ");
         System.out.println(sumOfAllNodesInBinaryTree(root , 0));
+        System.out.println("Number of nodes in the tree are -> ");
+        System.out.println(numberOfNodes(root));
+        System.out.println("Number of leaf nodes in the tree are -> ");
+        System.out.println(numberOfLeafNodes(root));
+        System.out.println("Height of the tree -> ");
+        System.out.println(getHeightOfBinaryTree(root));
+        System.out.println("Nodes at level number 3 -> ");
+        printGivenLevel(root , 3);
     }
 }
 
