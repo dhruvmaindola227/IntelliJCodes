@@ -5,6 +5,7 @@ public class ThisKeywordExample2 {
         int a = 10;
         ThisKeywordExample2 ts = new ThisKeywordExample2();
         ts.execute(a);
+        processNum(10,(num) -> System.out.println("LAMBDA " + num));
     }
 
     @Override

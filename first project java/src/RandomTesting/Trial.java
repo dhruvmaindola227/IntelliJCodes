@@ -1,25 +1,22 @@
 package RandomTesting;
 
-public class Trial {
+public class Trial implements If1,If2 {
+    @Override
+    public void m1() {
+        System.out.println("method called");
+    }
+
     public static void main(String[] args) {
-        First_C f = new First_C();
-        f.First_C();
-        f.myMethod();
+       If1 i = new Trial();
+       i.m1();
     }
 
 }
 
-class First_C {
-    public void myMethod(){
-        System.out.println("myMethod");
-    }
-    public void First_C(){
-        System.out.println("constructor");
-    }
-    {
-        System.out.println("Instance block");
-    }
-    static{
-        System.out.println("static block");
-    }
+interface If1{
+    void m1();
+}
+
+interface If2{
+    void m1();
 }

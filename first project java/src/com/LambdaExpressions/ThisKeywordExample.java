@@ -26,6 +26,8 @@ public class ThisKeywordExample {
             //this (this) will give error because for lambdas the "this" keywords value
             //is same as it would be outside the lambda expression which you cant use in psvm().
         });
+        ThisKeywordExample2 t = new ThisKeywordExample2();
+
     }
 
     private static void processNum(int num , Process2 process){
@@ -39,8 +41,9 @@ public class ThisKeywordExample {
         });
     }
 
-    interface Process2 {
-        void process1(int i);
-    }
+
+}
+interface Process2 {
+    void process1(int i);
 }
 
