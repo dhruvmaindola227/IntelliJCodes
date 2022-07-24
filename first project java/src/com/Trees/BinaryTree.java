@@ -99,6 +99,7 @@ public class BinaryTree {
         root.right.right = bt.createNewNode(8);
         root.right.left = bt.createNewNode(10);
         root.right.right.left = bt.createNewNode(9);
+        //-------------------------------------------------------
         System.out.println("PreOrder traversal of the tree -> ");
         printPreOrderTraversal(root);
         System.out.println();

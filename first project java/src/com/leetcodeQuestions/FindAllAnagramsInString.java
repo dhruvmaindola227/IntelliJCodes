@@ -4,15 +4,10 @@ import java.util.*;
 
 public class FindAllAnagramsInString {
     public static void main(String[] args) {
-        String s = "aa";
-        String p = "bb";
+        String s = "asadf";
+        String p = "as";
         ArrayList<Integer> list = new ArrayList<>(findAnagramsUsingArrays(s, p));
         System.out.println(list);
-//        Map<Character , Integer> pCount = new HashMap<>();
-//        Map<Character , Integer> sCount = new HashMap<>();
-//        pCount.put('a' , 2);
-//        sCount.put('b' , 2);
-//        System.out.println(pCount.equals(sCount));
     }
 
 
