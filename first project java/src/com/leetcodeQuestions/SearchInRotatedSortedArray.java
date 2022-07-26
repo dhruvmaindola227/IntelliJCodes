@@ -15,8 +15,8 @@ public class SearchInRotatedSortedArray {
             if (nums[middle] == target) {
                 return middle;
             }
-            if (nums[middle] < nums[end]) { //array is sorted or we could be around pivot.
-                if (nums[middle] < target && nums[end] >= target) { //means it is present in this range
+            if (nums[middle] < nums[end]) {
+                if (nums[middle] < target && nums[end] >= target) {
                     start = middle + 1;
                 } else {
                     end = middle - 1;
