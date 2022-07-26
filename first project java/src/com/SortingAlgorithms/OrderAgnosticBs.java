@@ -1,4 +1,4 @@
-package com.selfPractice;
+package com.SortingAlgorithms;
 
 public class OrderAgnosticBs {
     public static void main(String[] args) {

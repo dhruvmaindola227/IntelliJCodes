@@ -1,4 +1,4 @@
-package com.selfPractice;
+package com.SortingAlgorithms;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;

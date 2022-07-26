@@ -1,4 +1,4 @@
-package com.selfPractice;
+package com.RegularExpressions;
 
 public class RegexPractice2 {
 

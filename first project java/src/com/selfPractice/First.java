@@ -23,6 +23,6 @@ public class First {
          hm.forEach(bi);
          hm.forEach((a,b) -> System.out.println(a+b));
 
-         hm.entrySet().stream().forEach((a) -> System.out.println("key is "+ a.getKey() + " value is "+ a.getValue()));
+         hm.entrySet().forEach((a) -> System.out.println("key is "+ a.getKey() + " value is "+ a.getValue()));
     }
 }
