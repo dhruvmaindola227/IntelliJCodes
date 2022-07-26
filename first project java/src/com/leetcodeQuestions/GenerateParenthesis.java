@@ -1,12 +1,19 @@
 package com.leetcodeQuestions;
 
+import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class GenerateParenthesis {
     public static void main(String[] args) {
-        int numOfBrackets = 2;
+        int numOfBrackets = 3;
         System.out.println(generateParenthesis(numOfBrackets));
+        ArrayList<Object> list = new ArrayList<>();
+        list.add("s");
+        list.add(1);
+        list.add('c');
+        System.out.println(list.get(0));
+        System.out.println(list);
     }
 
     public static List<String> generateParenthesis(int n) {
@@ -31,7 +38,7 @@ public class GenerateParenthesis {
         //less than because we are running from 0,1,2....
         if(close < open){
             current.append(")");
-            backtrack(answer , current , open , ++close , maxBrackets);
+            backtrack(answer , current , open , close + 1 , maxBrackets);
             current.deleteCharAt(current.length() - 1);
         }
     }

@@ -3,7 +3,7 @@ package CompanyQuestions;
 public class CardFlipSum {
     public static void main(String[] args) {
         int size = 5;
-        int[] cards = {-2,3,-1,-4,-2};
+        int[] cards = {-1,2,3,4,-5};
         int sum = 0;
         for (int card : cards) {
             sum += card;

@@ -15,6 +15,7 @@ public class BinarySearchIn2D {
         System.out.println(Arrays.toString(search(arr,target)));
     }
 
+
     static int[] search(int[][] arr, int target)
     {
         int start = 0,row=0;
