@@ -7,19 +7,23 @@ public class BinarySearchTree {
         BinarySearchTree bst = new BinarySearchTree();
         rootNode = new BstNode(5, null , null);
         bst.addNode(3,rootNode);
-        bst.addNode(0,rootNode);
+        bst.addNode(2 , rootNode);
+        bst.addNode(1 , rootNode);
         bst.addNode(4, rootNode);
         bst.addNode(7, rootNode);
         bst.addNode(6, rootNode);
         bst.addNode(8 , rootNode);
+
         System.out.println("Inorder traversal of the tree now");
         printInOrderTraversal(rootNode);
+        System.out.println("does exist? -> " + doesExist(3 , rootNode));
         bst.deleteNode(4 , rootNode);
-        bst.deleteNode(0 , rootNode);
-//        bst.deleteNode(3 , rootNode);
+        bst.deleteNode(2 , rootNode);
+        bst.deleteNode(3 , rootNode);
         bst.deleteNode(5, rootNode);
         System.out.println("Inorder traversal of the tree now");
         printInOrderTraversal(rootNode);
+
     }
 
     public void addNode(int value , BstNode node){
@@ -38,6 +42,7 @@ public class BinarySearchTree {
         if(value > node.value){
             addNode(value , node.right);
         }
+
     }
 
     public void deleteNode(int value , BstNode node){
@@ -53,30 +58,53 @@ public class BinarySearchTree {
         }
 
         if(node.value == value && node.left == null && node.right == null){ //leaf node.
+            System.out.println(node.value + " deleted");
             node.value = -1;
             return;
         }
 
         if(node.value == value && node.left != null && node.right != null){
-            int temp = node.left.value; //inorder predecessor
-            node.left.value = node.value;
-            node.value = temp;
-            node.left = null;
+            System.out.println(node.value + " deleted");
+            node.value = findSuccessor(node.left); //inorder predecessor
+            node.left.value = -1;
             return;
         }
 
         if(node.value == value){ //case with a node having only 1 child.
-            BstNode newNode = node.left == null? node.right : node.left;
+            BstNode newNode = node.left == null ? node.right : node.left;
+            System.out.println(node.value + " deleted");
              //swap the values
                 int temp = newNode.value;
                 newNode.value = node.value;
                 node.value = temp;
-                node.left = null;
+                newNode.value= -1;
         }
+    }
+
+    public static boolean doesExist(int value , BstNode node){
+        if(node == null){
+            return false;
+        }
+        if(node.value == value){
+            return true;
+        }
+        if(node.value < value){
+            return doesExist(value , node.right);
+        }
+        else return doesExist(value , node.left);
+    }
+
+    private int findSuccessor(BstNode node) {
+        if(node == null){
+            return 0;
+        }
+        return Math.max(node.value, Math.max(findSuccessor(node.left) , findSuccessor(node.right)));
+
     }
 
     public static void printInOrderTraversal(BstNode rootNode){
         if(rootNode == null){
+            System.out.println();
             return;
         }
         printInOrderTraversal(rootNode.left);
