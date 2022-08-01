@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class ShellSort {
     public static void main(String[] args) {
-        int[] arr = {23,29,15,19,31,-234,654,-124};
+        int[] arr = {23,29,15,19,31,7,9,5,2};
         System.out.println("shell sort -> " + Arrays.toString(shellSort(arr)));
     }
 
@@ -29,6 +29,7 @@ public class ShellSort {
             }
             gap /= 2;
         }
+        System.out.println(Arrays.toString(arr));
          InsertionSort.insertionSort(arr);
         return arr;
     }
