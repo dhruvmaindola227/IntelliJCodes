@@ -68,6 +68,14 @@ public class BinaryTree {
         return 1;
     }
 
+    private static int findSuccessor(Node node) {
+        if(node == null){
+            return 0;
+        }
+        return Math.max(node.value, Math.max(findSuccessor(node.left) , findSuccessor(node.right)));
+
+    }
+
     public static int getHeightOfBinaryTree(Node rootNode){
         if(rootNode == null){
             return -1;
@@ -119,6 +127,7 @@ public class BinaryTree {
         System.out.println(getHeightOfBinaryTree(root));
         System.out.println("Nodes at level number 3 -> ");
         printGivenLevel(root , 3);
+        System.out.println("max -> "+ findSuccessor(root));
     }
 }
 
