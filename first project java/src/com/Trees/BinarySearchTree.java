@@ -5,14 +5,14 @@ public class BinarySearchTree {
     public static BstNode rootNode = null;
     public static void main(String[] args) {
         BinarySearchTree bst = new BinarySearchTree();
-        rootNode = new BstNode(5, null , null);
-        bst.addNode(3,rootNode);
-        bst.addNode(2 , rootNode);
-        bst.addNode(1 , rootNode);
-        bst.addNode(4, rootNode);
-        bst.addNode(7, rootNode);
-        bst.addNode(6, rootNode);
-        bst.addNode(8 , rootNode);
+        rootNode = new BstNode(40, null , null);
+        bst.addNode(20,rootNode);
+        bst.addNode( 60, rootNode);
+        bst.addNode(10 , rootNode);
+        bst.addNode(30, rootNode);
+        bst.addNode(50, rootNode);
+        bst.addNode(70, rootNode);
+        bst.addNode(25 , rootNode);
 
         System.out.println("Inorder traversal of the tree now");
         printInOrderTraversal(rootNode);
