@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Knapsack01RecursivePlusMemoized {
     public static void main(String[] args) {
-        int[][]dp = new int[1000][1000];
+        int[][]dp = new int[100][100];
         for (int[] ints : dp) {
             Arrays.fill(ints, -1);
         }
@@ -20,9 +20,12 @@ public class Knapsack01RecursivePlusMemoized {
        }
        if(bookDuration[size - 1] <= maxDuration){ //take max of if we take the (size-1)th book or we dont.
 
-           return dp[size][maxDuration] =  Math.max(points[size - 1] + maximizePoints(dp,size - 1 , maxDuration - bookDuration[size - 1] ,
+           return dp[size][maxDuration] =  Math.max(points[size - 1] + maximizePoints(dp,size - 1 ,
+                           maxDuration - bookDuration[size - 1] ,
                    points , bookDuration) //take the (size - 1)th element
+
                    ,
+
                    maximizePoints(dp,size - 1 , maxDuration , points , bookDuration)); //skip it.
 
        }
