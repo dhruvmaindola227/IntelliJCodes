@@ -7,22 +7,24 @@ import java.util.PriorityQueue;
 public class MyHeap {
     public static void main(String[] args){
         PriorityQueue<Integer> pq = new PriorityQueue<>();
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((o2,o1) -> o2 - o1);
+
+
 
         MyHeap heap = new MyHeap();
         heap.insert(20);
-        heap.insert(21);
+        heap.insert(20);
         heap.insert(10);
-        heap.insert(40);
-        heap.insert(50);
-        heap.insert(-32);
-        heap.insert(-134);
-        heap.insert(234);
-        System.out.println(heap.size);
+        heap.insert(9);
+        heap.insert(8);
+        heap.insert(7);
+        heap.insert(6);
+        System.out.println("Heap is -> ");
         heap.display();
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 7; i++) {
             heap.delete();
         }
-        System.out.println(Arrays.toString(Arrays.copyOfRange(heap.heap , 0 , 8)));
+        System.out.println(Arrays.toString(Arrays.copyOfRange(heap.heap , 0 , 7)));
     }
 
     public int size = 0;
