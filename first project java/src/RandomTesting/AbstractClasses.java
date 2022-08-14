@@ -27,7 +27,10 @@ abstract class A {
     A(){
         System.out.println("A Constructor called");
     }
-    abstract void m1();
+
+    void m1() {
+    }
+
     void m2(){
         System.out.println("In m2");
     }
