@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 public class SubsetSumEqualsK {
     public static void main(String[] args) {
-        int[] arr = {1,5,9,11};
-        int target = 3;
-        System.out.println(subsetExists(arr.length ,arr , target));
+        int[] arr = {1,534542,24,34,2,23423432,54,3};
+        int target = 5;
+        System.out.println(subsetExists(arr.length , arr , target));
     }
 
     public static boolean subsetExists(int size , int[] arr, int target) {
