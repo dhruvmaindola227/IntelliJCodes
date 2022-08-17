@@ -1,4 +1,4 @@
-package com.DynamicProgramming;
+package com.DynamicProgramming.Fibonacci;
 
 import java.util.Arrays;
 

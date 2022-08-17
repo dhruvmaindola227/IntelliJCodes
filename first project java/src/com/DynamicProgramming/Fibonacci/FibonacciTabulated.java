@@ -1,4 +1,4 @@
-package com.DynamicProgramming;
+package com.DynamicProgramming.Fibonacci;
 
 public class FibonacciTabulated {
     public static void main(String[] args) {

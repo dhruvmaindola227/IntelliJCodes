@@ -1,20 +1,23 @@
-package com.DynamicProgramming;
+package com.DynamicProgramming.Knapsack01;
 
-public class CountOfSubsetsSumEqualsK {
+import java.util.Arrays;
+
+public class SubsetSumEqualsK {
     public static void main(String[] args) {
-        int[] arr = {2,3,5,8,10};
-        System.out.println(countOfSubsets(arr.length , arr , 10));
+        int[] arr = {1,534542,24,34,2,23423432,54,3};
+        int target = 5;
+        System.out.println(subsetExists(arr.length , arr , target));
     }
 
-    public static int countOfSubsets(int size , int[] arr, int target) {
-        int[][] dp = new int[size + 1][target + 1];
+    public static boolean subsetExists(int size , int[] arr, int target) {
+        boolean[][] dp = new boolean[size + 1][target + 1];
         for (int i = 0; i < dp.length; i++) {
             for (int j = 0; j < dp[i].length; j++) {
                 if(i == 0){
-                    dp[i][j] = 0;
+                    dp[i][j] = false;
                 }
                 if(j == 0){
-                    dp[i][j] = 1;
+                    dp[i][j] = true;
                 }
             }
         }
@@ -23,7 +26,7 @@ public class CountOfSubsetsSumEqualsK {
         for (int i = 1; i < dp.length; i++) {
             for (int j = 1; j < dp[i].length; j++) {
                 if(arr[i - 1] <= j)
-                    dp[i][j] = dp[i - 1][j - arr[i - 1]] + dp[i - 1][j];
+                    dp[i][j] = dp[i - 1][j - arr[i - 1]] || dp[i - 1][j];
                 else
                     dp[i][j] = dp[i - 1][j];
             }
