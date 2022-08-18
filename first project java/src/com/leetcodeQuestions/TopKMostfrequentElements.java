@@ -6,7 +6,7 @@ public class TopKMostfrequentElements {
     public static void main(String[] args) {
         int[] arr={1,1,1,2,2,3};
         int k=2;
-        System.out.println(Arrays.toString(topKMostFrequent(arr, k)));
+//        System.out.println(Arrays.toString(topKMostFrequent(arr, k)));
         System.out.println(Arrays.toString(topKFrequentElements(arr , k)));
     }
     public static int[] topKFrequentElements(int[] nums, int k) {
@@ -15,9 +15,9 @@ public class TopKMostfrequentElements {
         for (int num: nums) map.put(num, map.getOrDefault(num, 0) + 1);
 
         // sort list from map.keyset() by map.get(num),
+        System.out.println(map.values());
         List<Integer> list = new ArrayList<>(map.keySet());
         Collections.sort(list, (a, b) -> map.get(b) - map.get(a)); //to sort list of keys in decreasing order of their values in map.
-
         // transfer results from list to int[];
         int[] res = new int[k];
         for (int i = 0; i < k; i++) res[i] = list.get(i);
