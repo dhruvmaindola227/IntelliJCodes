@@ -2,7 +2,6 @@ package RandomTesting;
 
 public class Interview {
     public static void main(String[] args) {
-//        Service service = new Service();
         Service service = Service.getServiceObject();
         Service service2 = Service.getServiceObject();
         System.out.println(service == service2);
@@ -35,7 +34,7 @@ class Service{
 
     public static Service getServiceObject(){
         if(service == null){
-            return new Service();
+            service = new Service();
         }
         return service;
     }
