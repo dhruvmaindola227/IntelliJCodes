@@ -44,6 +44,8 @@ class Account{
     }
 }
 
+
+//SINGLETON PATTERN.
 class AccountService{
     private static AccountService accountService;
     private AccountService() {
