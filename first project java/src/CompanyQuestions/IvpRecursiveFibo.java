@@ -1,6 +1,6 @@
-package RandomTesting;
+package CompanyQuestions;
 
-public class Fibo {
+public class IvpRecursiveFibo {
     public static void main(String[] args) {
         System.out.println(fibo(1));
     }

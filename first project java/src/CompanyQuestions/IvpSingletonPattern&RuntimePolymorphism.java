@@ -1,4 +1,4 @@
-package RandomTesting;
+package CompanyQuestions;
 
 public class Interview {
     public static void main(String[] args) {
