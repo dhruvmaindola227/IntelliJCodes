@@ -3,21 +3,27 @@ package RandomTesting;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class MyRandom extends NEwC {
+public class MyRandom  {
     public static void main(String[] args) {
-        MyRandom mr = new MyRandom();
-        mr.m1();
-        mr.m2();
+        RandomTest rt = new RandomTest(2);
+        RandomTest rt1 = rt;
+        rt1.property = 100;
+        System.out.println(rt == rt1);
+        System.out.println(rt.property);
+
+    }
+}
+
+
+class RandomTest{
+    int property;
+
+    public RandomTest() {
     }
 
-    @Override
-    void m2() {
-        System.out.println("In m2");
+    public RandomTest(int property) {
+        this.property = property;
     }
-
-
-
-
 }
 
 
