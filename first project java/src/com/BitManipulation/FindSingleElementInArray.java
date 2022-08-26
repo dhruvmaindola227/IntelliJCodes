@@ -2,7 +2,7 @@ package com.BitManipulation;
 
 public class FindSingleElementInArray {
     public static void main(String[] args) {
-        int[] arr = {1,4,2,3,2,1,4,5,3};
+        int[] arr = {9,3,9,3,9,7,9,7,7};
         System.out.println(findElement(arr));
     }
 

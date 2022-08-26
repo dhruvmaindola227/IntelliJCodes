@@ -14,10 +14,7 @@ public class FindNumberOfSetBits {
         }
         if(lastBit==1){
             counter++;
-            printAns(num>>1);
         }
-        else{
-            printAns(num>>1);
-        }
+        printAns(num>>1);
     }
 }
