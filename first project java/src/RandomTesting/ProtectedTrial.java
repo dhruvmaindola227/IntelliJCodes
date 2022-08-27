@@ -24,5 +24,15 @@ class SubClassSamePackage extends ProtectedTrial{
         SubClassSamePackage sbp = new SubClassSamePackage(2);
         System.out.println("protected class original number -> " + pt.number);
         System.out.println("Subclass number -> " + sbp.number);
+        SubSubClass ssb = new SubSubClass(2);
+        System.out.println(ssb.number);
+    }
+}
+
+class SubSubClass extends SubClassSamePackage{
+    SubSubClass(){}
+
+    SubSubClass(int number){
+        super(number);
     }
 }

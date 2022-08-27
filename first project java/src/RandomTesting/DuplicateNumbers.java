@@ -13,14 +13,14 @@ public class DuplicateNumbers {
         int result = -404;
         int inputArrIndex = -1;
         int outputArrIndex = -1;
-        for (int i = 0; i < A.length; i++) {
+        for (int i = 0; i < N; i++) {
             if(A[i] == K){
                 inputArrIndex = i;
             }
         }
         Arrays.sort(A); //sorting the array
 
-        for (int i = 0; i < A.length; i++) {
+        for (int i = 0; i < N; i++) {
             if(A[i] == K){
                 outputArrIndex = i;
             }
