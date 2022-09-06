@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 public class QuickSort {
     public static void main(String[] args) {
-        int[] arr = {5,4,3,2,1,-1,35,25,-234,53};
+        int[] arr = {7,11,14,6,9,4,3,12};
         quickSort(arr , 0 , arr.length - 1);
-        System.out.println(Arrays.toString(arr));
+        System.out.println("final" + Arrays.toString(arr));
     }
 
     public static void quickSort(int[] arr , int start , int end){
@@ -14,7 +14,7 @@ public class QuickSort {
             return;
         }
         int mid = start + (end - start) / 2;
-        int pivot = arr[mid];
+        int pivot = arr[0];
         partition(arr , start , end , pivot);
         quickSort(arr , 0 , mid - 1);
         quickSort(arr , mid + 1, end);

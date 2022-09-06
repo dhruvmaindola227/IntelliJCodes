@@ -12,19 +12,15 @@ public class MyHeap {
 
 
         MyHeap heap = new MyHeap();
-        heap.insert(20);
-        heap.insert(20);
-        heap.insert(10);
-        heap.insert(9);
+        heap.insert(16);
+        heap.insert(19);
+        heap.insert(4);
+        heap.insert(3);
         heap.insert(8);
-        heap.insert(7);
-        heap.insert(6);
+        heap.insert(3);
         System.out.println("Heap is -> ");
         heap.display();
-        for (int i = 0; i < 7; i++) {
-            heap.delete();
-        }
-        System.out.println(Arrays.toString(Arrays.copyOfRange(heap.heap , 0 , 7)));
+
     }
 
     public int size = 0;
