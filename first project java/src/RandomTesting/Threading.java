@@ -6,7 +6,7 @@ public class Threading {
     int counter = 1;
     int range;
     // Function to print odd numbers
-    public void printOddNumber()
+    public void printOddNumber() //pascal case convention
     {
         synchronized (this)
         {

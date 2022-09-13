@@ -10,7 +10,7 @@ public class ProtectedTrial2 extends ProtectedTrial {
 
     public static void main(String[] args) {
         ProtectedTrial pt = new ProtectedTrial(2);
-//        System.out.println(pt.num); //this will give error now because it is protected.
+//      System.out.println(pt.num); //this will give error now because it is protected.
         ProtectedTrial2 pt2 = new ProtectedTrial2(2);
         System.out.println(pt2.number);
         SubClass sb = new SubClass(2);

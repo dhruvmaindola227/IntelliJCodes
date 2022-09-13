@@ -1,12 +1,14 @@
 package OopsPlacementAssignment;
 
+
 import java.util.Scanner;
 
 public class Q7AlternatePrimeNumbers {
     public static void main(String[] args) {
         System.out.println("Enter the number till which you want the alternate prime numbers");
-        int number = new Scanner(System.in).nextInt();
-        printAlternatePrimeNumbers(number);
+
+//        int number = new Scanner(System.in).nextInt();
+//        printAlternatePrimeNumbers(number);
     }
 
     public static void printAlternatePrimeNumbers(int number) {

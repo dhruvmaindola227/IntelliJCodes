@@ -1,9 +1,12 @@
 package CompanyQuestions;
 
+import java.util.HashSet;
+
 public class NCRLongestPrefixSuffix {
     public static void main(String[] args) {
         String s = "abcdefabc";
         System.out.println(lengthOfLongestPrefixSuffix(s));
+        HashSet<Integer> set = new HashSet<>();
     }
 
     public static int lengthOfLongestPrefixSuffix(String s) {
