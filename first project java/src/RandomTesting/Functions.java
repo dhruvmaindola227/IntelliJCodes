@@ -2,22 +2,18 @@ package RandomTesting;
 
 public class Functions {
     public static void main(String[] args) {
-        int mukesh = 45;
-        int suresh = 2234;
-        sumOfTwoNums(100 , 10);
-        sumOfTwoNums(10L , 20L);
-        sumOfTwoNums(10L , 50); //Automatic - Typecasting.
-        Human krika = new Human("kr");
+        int a = 101;
+        int b = 1;
+        System.out.println(sum(1d,2));
     }
 
-    public static void sumOfTwoNums(int karan , int arjun) {
-        int sum = karan + arjun;
-        System.out.println(sum +" in int function");
+    public static double sum(double number1 , double number2){
+        return number1 + number2;
     }
 
-    //compile time polymorphism.
-
-    public static void sumOfTwoNums(long karan , long arjun){
-        System.out.println(karan + arjun + " in long function");
-    }
+    //method signature.
+    //functions/methods -> block of code that does something.
+    //compile time polymorphism. //method overloading
 }
+
+
