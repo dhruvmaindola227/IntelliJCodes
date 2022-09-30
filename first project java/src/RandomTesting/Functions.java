@@ -2,18 +2,22 @@ package RandomTesting;
 
 public class Functions {
     public static void main(String[] args) {
-        int a = 101;
-        int b = 1;
-        System.out.println(sum(1d,2));
+
+        int number = 999;
+        int answer = printNumber(1000);
+        System.out.println(answer);//argument //calling the function
+        //argument
+//        .......
     }
 
-    public static double sum(double number1 , double number2){
-        return number1 + number2;
+    public static int printNumber(int num){
+        return num;
     }
 
-    //method signature.
-    //functions/methods -> block of code that does something.
-    //compile time polymorphism. //method overloading
+
+//class -> named group of properties and functions.
+//functions -> block of code that does something.
 }
+
 
 
