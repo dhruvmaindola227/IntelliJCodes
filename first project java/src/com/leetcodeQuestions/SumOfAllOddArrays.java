@@ -15,7 +15,7 @@ public class SumOfAllOddArrays {
             }
 
         return finalSum;
-    }
+    }:
     public static int sumOfAllSlidingWindowOfSizeK(int[] arr , int k ) {
         int currSum = 0;
         int absSum = 0;
