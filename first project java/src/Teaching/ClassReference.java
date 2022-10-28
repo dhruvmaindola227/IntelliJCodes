@@ -1,25 +1,28 @@
 package Teaching;
 
+import com.sun.security.jgss.GSSUtil;
+
 public class ClassReference {
     public static void main(String[] args) {
-        NewChild np = new NewChild();
-        np.sayMessage();
-        np.sayMessage("aayush");
+        Animal animal = new Animal();
+        animal.makeNoise();
     }
 }
 
-class NewParent{
-    public void sayMessage(){
-        System.out.println("parent class method");
+class Animal{
+    public void makeNoise(){
+        System.out.println("generic noise");
     }
 }
 
-class NewChild{
-    public void sayMessage(){
-        System.out.println("child class method");
+class Dog extends Animal{
+    public void makeNoise(){
+        System.out.println("Bhow bhow!!");
     }
 
-    public void sayMessage(String message){
-        System.out.println(message + "child class method");
+    public boolean hasFourLegs(){
+        return true;
     }
 }
+
+
