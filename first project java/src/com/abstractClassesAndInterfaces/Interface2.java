@@ -9,5 +9,4 @@ public interface Interface2 {
     static void m6(){
         System.out.println("m6");
     }
-
 }
