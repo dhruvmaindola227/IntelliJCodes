@@ -2,10 +2,10 @@ package Teaching;
 
 public class Hema implements Subtraction , Addition  {
     public static void main(String[] args) {
-        Subtraction hema = new Hema();
+        Subtraction hema = (a,b) -> b-a;
+        Addition chirag = (a,b) -> a-b;
         System.out.println(hema.sub(5,10));
-        Addition add = new Hema();
-        System.out.println(add.sub(54 , 100));
+        System.out.println(chirag.sub(5,10));
     }
 
     @Override

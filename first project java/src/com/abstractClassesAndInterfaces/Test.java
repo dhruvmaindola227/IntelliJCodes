@@ -27,15 +27,15 @@ public class Test extends AbstractClasses1 implements Interface,Interface2 {
     }
 
     public static void main(String[] args) {
-        Test test = new Test();
-        test.m1();
-        test.m5();
-        test.m2();
+        AbstractClasses1 test = new Test();
+        Interface2 int2 = new Test();
+//        test.m1();
+//        test.m5();
+//        test.m2();
         test.m3();
-        test.m4();
+        int2.m4();
         Interface2.m6(); //because the m6() is a static method inside the Interface2.
         Interface inte = () -> System.out.println("m1 is called");
         inte.m1();
-
     }
 }
