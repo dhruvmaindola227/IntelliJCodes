@@ -30,7 +30,7 @@ public class GroupAnagramsTogether {
     public static List<List<String>> groupAnagramsTogether2(String[] arr){
         Map<ArrayList<Integer>,ArrayList<String>> map= new HashMap<>();
         for(String string : arr){
-            ArrayList<Integer> strInMap = new ArrayList<>(charCountList(string));
+            ArrayList<Integer> strInMap = charCountList(string);
             if(!map.containsKey(strInMap)){
                 map.put(strInMap , new ArrayList<>());
             }
