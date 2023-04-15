@@ -1,5 +1,6 @@
 package com.Heap;
 
+import java.util.Collections;
 import java.util.PriorityQueue;
 
 public class KthSmallestNumberInSortedMatrix {
@@ -13,7 +14,7 @@ public class KthSmallestNumberInSortedMatrix {
         if(arr[0].length == 1){
             return arr[0][0];
         }
-        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((o1 , o2) -> o2 - o1);
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
         int[] nums = new int[arr.length * arr[0].length];
         int sizeOfEach = 0;
         for(int[] array : arr){

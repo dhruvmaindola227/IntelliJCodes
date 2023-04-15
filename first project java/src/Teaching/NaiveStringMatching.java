@@ -6,10 +6,6 @@ public class NaiveStringMatching {
     public static void main(String[] args) {
         String string = "manjari";
         String pattern = "Manjari";
-        if(string.contains(pattern)){
-            System.out.println(true);
-        }
-
         System.out.println(string.hashCode());
         System.out.println(pattern.hashCode());
 

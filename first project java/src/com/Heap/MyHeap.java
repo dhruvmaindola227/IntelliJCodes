@@ -1,16 +1,15 @@
 package com.Heap;
 
+import Teaching.Interface1;
+
 import javax.naming.SizeLimitExceededException;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
-public class MyHeap {
+public class MyHeap  {
     public static void main(String[] args){
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        PriorityQueue<Integer> pq = new PriorityQueue<>(); //minheap
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>((o2,o1) -> o2 - o1);
-
-
-
         MyHeap heap = new MyHeap();
         heap.insert(16);
         heap.insert(19);
@@ -67,9 +66,7 @@ public class MyHeap {
             else{
                 break;
             }
-
         }
-
     }
 
     public void display(){
